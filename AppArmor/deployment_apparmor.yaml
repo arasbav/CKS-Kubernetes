@@ -17,7 +17,7 @@ spec:
          labels:
             app: apparmor
          annotations:                                                                              # ADD THIS
-            container.apparmor.security.beta.kubernetes.io/nginx: \ localhost/apparmor-example     # ADD THIS
+            container.apparmor.security.beta.kubernetes.io/nginx:  localhost/apparmor-example     # ADD THIS
       spec:   
         containers:
          - image: nginx
