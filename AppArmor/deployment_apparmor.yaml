@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+   creationTimestamp: null
+   labels:
+      app: apparmor
+   name: apparmor
+spec:
+   replicas: 1
+   selector:
+      matchLabels:
+         app: apparmor
+   strategy: {}
+   template:
+      metadata:
+         creationTimestamp: null
+         labels:
+            app: apparmor
+         annotations:                                                                              # ADD THIS
+            container.apparmor.security.beta.kubernetes.io/nginx: \ localhost/apparmor-example     # ADD THIS
+      spec:   
+        containers:
+         - image: nginx
+         name: nginx
+         nodeSelector:                                                                             # ADD THIS
+            apparmor: example.                                                                     # ADD THIS
+status: {}
