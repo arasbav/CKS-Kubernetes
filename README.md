@@ -9,7 +9,7 @@ echo 'complete -F __start_kubectl k' >>~/.bashrc
 ```
 
 ## Use kubectl --dry-run=client to generate Pods or Deployments manifests
-
+```
 # Pod
 kubectl run pod-name --image=nginx --dry-run=client -oyaml
 apiVersion: v1
@@ -30,7 +30,7 @@ status: {}
 
 # Deployment
 kubectl create deploy deploy-name --image=nginx --dry-run=client -oyaml
-
+```
 
 ## Use kubectl help mode to generate a right command
 ```
