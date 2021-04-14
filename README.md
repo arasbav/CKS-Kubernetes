@@ -1,4 +1,4 @@
-## Enable kubectl autocompletion
+# Enable kubectl autocompletion
 
 ```
 https://kubernetes.io/docs/tasks/tools/included/optional-kubectl-configs-bash-linux/#enable-kubectl-autocompletion
@@ -8,9 +8,10 @@ echo 'alias k=kubectl' >>~/.bashrc
 echo 'complete -F __start_kubectl k' >>~/.bashrc
 ```
 
-## Use kubectl --dry-run=client to generate Pods or Deployments manifests
+# Use kubectl --dry-run=client to generate Pods or Deployments manifests
 ```
 # Pod
+
 kubectl run pod-name --image=nginx --dry-run=client -oyaml
 apiVersion: v1
 kind: Pod
@@ -32,7 +33,7 @@ status: {}
 kubectl create deploy deploy-name --image=nginx --dry-run=client -oyaml
 ```
 
-## Use kubectl help mode to generate a right command
+# Use kubectl help mode to generate a right command
 ```
 kubectl -n psp-test create clusterrole --help
 Create a ClusterRole.
